@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.form-group {
+  @apply flex flex-col justify-start items-start;
+
+  label {
+    @apply text-xl pt-4;
+  }
+
+  input:not([type="submit"]) {
+    @apply border-2 bg-gray-200;
+  }
+
+  input[type="submit"] {
+    @apply border-2 bg-blue-600 shadow-sm text-white text-xl mt-4 cursor-pointer;
+
+    &[disabled] {
+      @apply shadow-none opacity-50 cursor-not-allowed;
+    }
+  }
+
+  input, select {
+    @apply w-full h-12 rounded border-2 bg-gray-200;
+  }
+}
+
+.link-button {
+  @apply text-blue-600 font-bold cursor-pointer;
+}
+
+#waitingLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .75) no-repeat center center;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
