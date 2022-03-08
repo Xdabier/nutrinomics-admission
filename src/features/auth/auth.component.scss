@@ -1,0 +1,11 @@
+.module {
+  &-content {
+    @apply fixed z-10 left-0 right-0 w-full h-full flex justify-center items-center;
+  }
+
+  &-background {
+    background-image: url("https://front-pictures.s3-eu-west-1.amazonaws.com/images/cancerpatient-high.jpg");
+    @apply w-screen h-screen block blur-lg;
+    @apply z-0 bg-cover fixed top-0 left-0 bg-no-repeat bg-center;
+  }
+}

@@ -1,0 +1,16 @@
+<section class="sm:w-96 sm:h-auto h-screen w-screen shadow bg-white z-10 rounded p-5">
+	<h1 class="text-center text-2xl pt-4">{{ t.auth.signup.title | translate }}</h1>
+	<form class="form-group" [formGroup]="signupForm" (ngSubmit)="submitSignup()">
+		<label for="email">{{ t.auth.fieldsLabels.email | translate }}</label>
+		<input type="email" id="email" formControlName="email" />
+		<label for="username">{{ t.auth.fieldsLabels.username | translate }}</label>
+		<input type="text" id="username" formControlName="username" />
+		<label for="password">{{ t.auth.fieldsLabels.password | translate }}</label>
+		<input type="password" id="password" formControlName="password" />
+		<input type="submit" [value]="t.auth.common.signup | translate" [disabled]="!signupForm.valid" />
+	</form>
+	<p class="text-xl pt-4">
+		{{ t.auth.signup.accountExists | translate }}
+		<a class="link-button" [routerLink]="routes.auth.login">{{ t.auth.common.login | translate }}</a>
+	</p>
+</section>

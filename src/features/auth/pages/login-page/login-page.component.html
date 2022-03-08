@@ -1,0 +1,19 @@
+<section class="sm:w-96 sm:h-auto h-screen w-screen shadow bg-white z-10 rounded p-5">
+	<h1 class="text-center text-2xl pt-4">{{ t.auth.login.title | translate }}</h1>
+	<form class="form-group" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+		<label>{{ t.auth.fieldsLabels.email | translate }}</label>
+		<input type="email" formControlName="email" />
+		<label>{{ t.auth.fieldsLabels.password | translate }}</label>
+		<input type="password" formControlName="password" />
+		<label for="lang">{{ t.auth.common.language | translate }}</label>
+		<select class="mt-1" id="lang" formControlName="lang">
+			<option value="fr">{{ t.auth.common.fr | translate }}</option>
+			<option value="en">{{ t.auth.common.en | translate }}</option>
+		</select>
+		<input type="submit" [value]="t.auth.common.login | translate" [disabled]="!loginForm.valid" />
+	</form>
+	<p class="text-xl pt-4">
+		{{ t.auth.login.noAccount | translate }}
+		<a class="link-button" [routerLink]="routes.auth.signup">{{ t.auth.common.signup | translate }}!</a>
+	</p>
+</section>
