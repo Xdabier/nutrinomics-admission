@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	apiURL: 'https://nutrinomics-admission-api.herokuapp.com'
+	apiURL: 'http://51.178.143.127:8080'
 };
