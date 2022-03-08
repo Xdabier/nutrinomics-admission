@@ -51,8 +51,8 @@ export class LoginPageComponent extends BaseComponent implements OnInit, OnDestr
 			);
 			this.loaderService.hideLoader();
 			await this.router.navigate([this.routes.dashboard.home]);
-		} catch (e) {
-			alert(e);
+		} catch (e: any) {
+			alert(e.error);
 			this.loaderService.hideLoader();
 		}
 	}

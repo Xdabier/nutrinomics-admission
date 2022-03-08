@@ -30,8 +30,8 @@ export class SignupPageComponent extends BaseComponent implements OnInit {
 			await this.authService.signUpAPI(this.signupForm.getRawValue() as SignUpPayloadType);
 			this.loaderService.hideLoader();
 			await this.router.navigate([this.routes.dashboard.home]);
-		} catch (e) {
-			alert(JSON.stringify(e));
+		} catch (e: any) {
+			alert(e.error);
 			this.loaderService.hideLoader();
 		}
 	}
